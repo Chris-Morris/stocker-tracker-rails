@@ -1,1 +1,19 @@
-<h1>Hello Chris!</h1>
+
+
+
+
+<div class="container mt-4">
+  <h1>Hello Chris!</h1>
+  <% if @ticker %>
+    <%= @ticker %>
+  <% end %>
+  <% if @stock %>
+    <%= @stock.company_name %>
+    $<%= @stock.latest_price %>
+    <br/>
+  <% end %>
+  <%= form_tag root_path, :method => 'POST' do %>
+    <%= text_field_tag 'ticker', nil, placeholder: "Enter Ticker Symbol", size: 50 %>
+    <%= submit_tag 'Lookup' %>
+  <% end %>
+</div>
