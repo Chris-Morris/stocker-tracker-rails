@@ -6,7 +6,6 @@ class HomeController < ApplicationController
     if params[:ticker] != nil
       @ticker = params[:ticker]
       @stock = StockQuote::Stock.quote(@ticker)
-      debugger
     end
   end
 end
