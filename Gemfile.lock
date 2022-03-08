@@ -241,7 +241,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
-  jquery-rails
+  jquery-rails (~> 4.4)
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.2)
   selenium-webdriver

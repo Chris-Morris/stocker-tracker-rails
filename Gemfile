@@ -49,7 +49,7 @@ gem "bootsnap", require: false
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 
 # jQuery
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.4'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
