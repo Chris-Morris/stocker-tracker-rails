@@ -49,7 +49,7 @@ gem "bootsnap", require: false
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 
 # jQuery
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.4'
 
 gem 'stock_quote', '~> 3.0'
 
