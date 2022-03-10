@@ -2,15 +2,26 @@
 
 <h1>Stocks</h1>
 
-<div id="stocks">
-  <% @stocks.each do |stock| %>
-    <% if stock.user_id == current_user.id %>
-      <%= render stock %>
-      <p>
-        <%= link_to "Show this stock", stock %>
-      </p>
-    <% end %>
-  <% end %>
-</div>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Company</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <div id="stocks">
+      <% @stocks.each do |stock| %>
+        <% if stock.user_id == current_user.id %>
+          <tr>
+            <td><%= link_to stock.ticker.upcase, stock %></td>
+            <td><center><%= link_to 'Edit', edit_stock_path(stock), class: "btn btn-secondary" %></center></td>
+            <td><center><%= link_to 'Delete', stock_path(stock), data: { turbo_method: :delete }, class: "btn btn-danger" %></center></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </div>
+  </tbody>
+</table>
 
 <%= link_to "New stock", new_stock_path %>
