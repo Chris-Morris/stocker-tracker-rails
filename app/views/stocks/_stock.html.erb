@@ -1,7 +1,17 @@
-<div id="<%= dom_id stock %>">
-  <p>
-    <strong>Ticker:</strong>
-    <%= stock.ticker %>
-  </p>
+<div id="<%= dom_id stock %>" class="card">
+  <div class="card-header">
+    <strong><%= stock.ticker %></strong>
+  </div>
 
+  <div class="card-body">
+    <%
+=begin%>
+ <p><%= stock.latest_price %>
+    <p>Open:<%= stock.open %>
+    <p>High:<%= stock.high %>
+    <p>Low:<%= stock.low %>
+    <p>Close:<%= stock.close %> 
+<%
+=end%>
+  </div>
 </div>
