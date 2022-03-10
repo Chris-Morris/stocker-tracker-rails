@@ -4,10 +4,12 @@
 
 <div id="stocks">
   <% @stocks.each do |stock| %>
-    <%= render stock %>
-    <p>
-      <%= link_to "Show this stock", stock %>
-    </p>
+    <% if stock.user_id == current_user.id %>
+      <%= render stock %>
+      <p>
+        <%= link_to "Show this stock", stock %>
+      </p>
+    <% end %>
   <% end %>
 </div>
 
