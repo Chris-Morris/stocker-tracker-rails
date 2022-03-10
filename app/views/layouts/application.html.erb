@@ -12,6 +12,10 @@
 
   <body> 
     <%= render 'home/navbar' %>
-    <%= yield %>
+    <div class="container mt-4">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>

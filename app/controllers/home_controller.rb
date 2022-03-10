@@ -5,7 +5,13 @@ class HomeController < ApplicationController
 
     if params[:ticker] != nil
       @ticker = params[:ticker]
-      @stock = StockQuote::Stock.quote(@ticker)
+      begin
+        @stock = StockQuote::Stock.quote(@ticker)
+      rescue => exception
+        @failed_to_fetch = "Ticker symbol doesn't exist"
+      end
+    elsif
+      @nothing = "Hey, you forgot to enter a symbol"
     end
   end
 end

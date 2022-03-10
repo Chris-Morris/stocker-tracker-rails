@@ -51,7 +51,11 @@ gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 # jQuery
 gem 'jquery-rails', '~> 4.4'
 
+# Stock API
 gem 'stock_quote', '~> 3.0'
+
+# User Auth
+gem 'devise', '~> 4.8', '>= 4.8.1'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
