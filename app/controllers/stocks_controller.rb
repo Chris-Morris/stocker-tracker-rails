@@ -9,7 +9,7 @@ class StocksController < ApplicationController
   def index
     @stocks = current_user.stocks
 
-    @api = StockQuote::Stock.new(api_key: 'pk_bbe95e67cb694c3a9c7e3cf55ef9f2e8')
+    # @api = StockQuote::Stock.new(api_key: 'pk_bbe95e67cb694c3a9c7e3cf55ef9f2e8')
 
   end
 
@@ -73,6 +73,8 @@ class StocksController < ApplicationController
     api_key = '5d1261a6941b19.92876445'
     url = "https://eodhistoricaldata.com/api/fundamentals/AAPL.US?api_token=#{api_key}"
     response = RestClient.get(url)
+    json = JSON.parse(response)
+    general = json["General"]
     render json: response
   end
 

@@ -12,7 +12,9 @@
   </thead>
 
   <tbody>
-    <div id="stocks">
+    <%
+=begin%>
+ <div id="stocks">
       <% @stocks.each do |stock| %>
         <% begin %>
           <% @ticker = StockQuote::Stock.quote(stock.ticker) %>
@@ -33,7 +35,9 @@
           </tr>
         <% end %>
       <% end %>
-    </div>
+    </div> 
+<%
+=end%>
   </tbody>
 </table>
 
