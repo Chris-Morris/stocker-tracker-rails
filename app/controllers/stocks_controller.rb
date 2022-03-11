@@ -3,6 +3,8 @@ class StocksController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: %i[ edit update destroy ]
 
+  require 'rest-client'
+
   # GET /stocks or /stocks.json
   def index
     @stocks = current_user.stocks
@@ -65,6 +67,13 @@ class StocksController < ApplicationController
   def correct_user
     @ticker = current_user.stocks.find_by(id: params[:id])
     redirect_to stocks_path, notice: "Not Authorized to perform this action" if @ticker.nil?
+  end
+
+  def fetch_stocks
+    api_key = '5d1261a6941b19.92876445'
+    url = "https://eodhistoricaldata.com/api/fundamentals/AAPL.US?api_token=#{api_key}"
+    response = RestClient.get(url)
+    render json: response
   end
 
   private

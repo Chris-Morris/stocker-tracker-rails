@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
+  get '/stockjson', to: "stocks#fetch_stocks"
+
   post "/" => 'home#index'
 end

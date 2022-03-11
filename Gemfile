@@ -52,10 +52,10 @@ gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 gem 'jquery-rails', '~> 4.4'
 
 # Stock API
-gem 'stock_quote', '~> 3.0'
+#gem 'stock_quote', '~> 3.0'
 
 # Rest client
-#gem 'rest-client', '~> 2.1'
+gem 'rest-client', '~> 2.1'
 
 # User Auth
 gem 'devise', '~> 4.8', '>= 4.8.1'
